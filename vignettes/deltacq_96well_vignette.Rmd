@@ -102,7 +102,7 @@ The `sample_info` column contains values like `WT OD0.5 glyS`, where `WT` descri
 
 However, tidyqpcr expects a column called `sample_id` that identifies the unique sample - here, that would be identified by a strain (e.g. `WT`) and growth stage (e.g. `OD0.5`). So we use the `unite` function, from the `tidyr` package, to create a new column `sample_id` that unites strain and OD.
 
-Before these, we have to do a little organization. Wee add row and column labels for each well, so that we can later draw the plate plan and check the description. We use the tidyqpcr function `create_blank_plate_96well` to make a "blank" plate plan, then join that information to the data. The join function `inner_join` is in the `dplyr` package.
+Before these, we have to do a little organization. We add row and column labels for each well, so that we can later draw the plate plan and check the description. We use the tidyqpcr function `create_blank_plate_96well` to make a "blank" plate plan, then join that information to the data. The join function `inner_join` is in the `dplyr` package.
 
 We use the tidyverse pipe operator `%>%` to do all these transformations in a row, with one on each line.
 
